@@ -3,7 +3,12 @@
     "target": "es5",
     "module": "commonjs",
     "strict": true,
+    "strictNullChecks": true,
     "esModuleInterop": true,
     "jsx": "react" // or the bundle with throw `react if not defined` error
+  },
+  "parcel-plugin-typescript": {
+    // If true type-checking is disabled
+    "transpileOnly": false
   }
 }

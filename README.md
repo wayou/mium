@@ -3,13 +3,27 @@ mium
 
 A set of react components.
 
+
+### Installing
+
+```sh
+$ yarn
+```
+
+### Running the examples
+
+```sh
+$ yarn start
+```
+
+
 ### Material resources
 
 Some material resources for reference.
 
-[material-components/material-components-web-react](https://github.com/material-components/material-components-web-react)
-[angular/material2](https://github.com/angular/material2)
-[mui-org/material-ui](https://github.com/mui-org/material-ui)
+- [material-components/material-components-web-react](https://github.com/material-components/material-components-web-react)
+- [angular/material2](https://github.com/angular/material2)
+- [mui-org/material-ui](https://github.com/mui-org/material-ui)
 
 
 ### Notes
@@ -44,20 +58,34 @@ _See more: [React Stateless Functional Component with TypeScript](https://medium
 #### default value for optional props
 
 ```js
-interface IMyComponentProps{
-    //...
+interface IMyComponentProps {
+  foo?: string;
 }
 
 const MyComponent: React.SFC<IMyComponentProps> = props => {
-    return {props.children}
-}
+  return props.foo.toUpperCase();
+};
 
 MyComponent.defaultProps = {
-    // ...
-}
+  foo: "allo"
+};
 ```
 
 But TypeScript will continue conplains that props with default value possibly `undefined`.
+And there's an [issue](https://github.com/Microsoft/TypeScript/issues/23812) for the TypeScript.
+
+Fortunatly, TypeScript 3 comes a solution for this (see the _Support for defaultProps in JSX_ section):
+
+```js
+interface IMyComponentProps {
+  foo?: string;
+}
+
+function MyComponent({ foo = "allo" }: IMyComponentProps) {
+  return foo.toUpperCase();
+}
+```
+
 
 #### tslint and prettier conflicts
 

@@ -24172,6 +24172,19 @@ __export(require("./button"));
 },{"./button":"../lib/button/button.tsx"}],"../lib/counter/counter.tsx":[function(require,module,exports) {
 "use strict";
 
+var __rest = this && this.__rest || function (s, e) {
+  var t = {};
+
+  for (var p in s) {
+    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  }
+
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
 var __importStar = this && this.__importStar || function (mod) {
   if (mod && mod.__esModule) return mod;
   var result = {};
@@ -24188,10 +24201,14 @@ Object.defineProperty(exports, "__esModule", {
 
 var react_1 = __importStar(require("react"));
 
-exports.Counter = function (props) {
-  var _a = react_1.useState(props.initialNum),
-      num = _a[0],
-      setNum = _a[1];
+exports.Counter = function (_a) {
+  var _b = _a.initialNum,
+      initialNum = _b === void 0 ? 0 : _b,
+      props = __rest(_a, ["initialNum"]);
+
+  var _c = react_1.useState(initialNum),
+      num = _c[0],
+      setNum = _c[1];
 
   return react_1.default.createElement("div", {
     className: "counter-example"
@@ -24203,11 +24220,7 @@ exports.Counter = function (props) {
     onClick: function onClick() {
       return setNum(num - 1);
     }
-  }, "-"), num);
-};
-
-exports.Counter.defaultProps = {
-  initialNum: 0
+  }, "-"), props.label, ":", num);
 };
 },{"react":"../../node_modules/react/index.js"}],"../lib/counter/index.ts":[function(require,module,exports) {
 "use strict";
@@ -24249,7 +24262,9 @@ function App() {
     className: "mium-examples"
   }, react_1.default.createElement(button_1.Button, {
     label: "foo"
-  }, "bar"), react_1.default.createElement(counter_1.Counter, null), react_1.default.createElement(counter_1.Counter, {
+  }, "bar"), react_1.default.createElement(counter_1.Counter, {
+    label: "count is"
+  }), react_1.default.createElement(counter_1.Counter, {
     initialNum: -1
   }));
 }
@@ -24302,7 +24317,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59192" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55943" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

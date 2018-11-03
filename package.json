@@ -8,18 +8,20 @@
     "start": "parcel src/examples/index.html --out-dir build --open",
     "build:lib": "parcel build src/lib/index.ts",
     "build:examples": "parcel build src/examples/index.ts",
-    "lint": "tslint -c tslint.json src/**/*.ts",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "devDependencies": {
     "@types/react": "^16.4.18",
     "@types/react-dom": "^16.0.9",
     "parcel-bundler": "^1.10.3",
+    "parcel-plugin-typescript": "^1.0.0",
     "react": "^16.7.0-alpha.0",
     "react-dom": "^16.7.0-alpha.0",
     "sass": "^1.14.3",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
+    "tslint-react": "^3.6.0",
     "typescript": "^3.1.6"
   }
 }

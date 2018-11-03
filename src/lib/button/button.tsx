@@ -11,7 +11,3 @@ export const Button: React.SFC<IButtonProps> = props => {
     </button>
   );
 };
-
-Button.defaultProps = {
-  label: "CLIKE ME"
-};

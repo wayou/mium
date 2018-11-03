@@ -8,8 +8,8 @@ export default function App() {
   return (
     <div className="mium-examples">
       <Button label="foo">bar</Button>
-      <Counter />
-      <Counter initialNum={-1} />
+      <Counter label="count is"/>
+      <Counter  initialNum={-1} />
     </div>
   );
 }
