@@ -86,6 +86,9 @@ function MyComponent({ foo = "allo" }: IMyComponentProps) {
 }
 ```
 
+#### Parcel dones't respect the TypeScript error
+
+It just ignore and compile successfully. Related issue: _[🐛 Not displaying or honoring Typescript errors ](https://github.com/parcel-bundler/parcel/issues/465)_
 
 #### tslint and prettier conflicts
 
