@@ -1,8 +1,6 @@
-mium
-===
+# mium
 
 A set of react components.
-
 
 ### Installing
 
@@ -16,7 +14,6 @@ $ yarn
 $ yarn start
 ```
 
-
 ### Material resources
 
 Some material resources for reference.
@@ -24,7 +21,6 @@ Some material resources for reference.
 - [material-components/material-components-web-react](https://github.com/material-components/material-components-web-react)
 - [angular/material2](https://github.com/angular/material2)
 - [mui-org/material-ui](https://github.com/mui-org/material-ui)
-
 
 ### Notes
 
@@ -53,7 +49,6 @@ const MyComponent: React.SFC<IMyComponentProps> = props => {
 ```
 
 _See more: [React Stateless Functional Component with TypeScript](https://medium.com/@ethan_ikt/react-stateless-functional-component-with-typescript-ce5043466011)_
-
 
 #### default value for optional props
 
@@ -90,5 +85,6 @@ function MyComponent({ foo = "allo" }: IMyComponentProps) {
 
 It just ignore and compile successfully. Related issue: _[🐛 Not displaying or honoring Typescript errors ](https://github.com/parcel-bundler/parcel/issues/465)_
 
-#### tslint and prettier conflicts
+So we need to using a TypeScript plugin for parcel [parcel-plugin-typescript](https://github.com/fathyb/parcel-plugin-typescript#readme). But seems not working with latest parcel, see the issue [here](https://github.com/fathyb/parcel-plugin-typescript/issues/60) and [here](https://github.com/parcel-bundler/parcel/issues/2129)
 
+#### tslint and prettier conflicts
